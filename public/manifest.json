@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Tiptap Editor Extension",
+  "short_name": "Tiptap Editor",
+  "description": "A text editor extension powered by Tiptap",
+  "version": "1.0",
+  "icons": {
+    "16": "copy_build/favicon.ico",
+    "32": "copy_build/logo192.png",
+    "48": "copy_build/logo192.png",
+    "128": "copy_build/logo512.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "copy_build/background.js"
+  },
+  "action": {
+    "default_popup": "copy_build/popup.html",
+    "default_icon": "copy_build/favicon.ico",
+    "default_popup_width": 400,  
+  "default_popup_height": 600
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["copy_build/content.js"]
+    }
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ]
+}
